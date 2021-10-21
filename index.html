@@ -40,43 +40,13 @@
             max-width: 400px;
             height: auto;
             box-shadow:
-  1.5px 5.6px 3.2px rgba(0, 0, 0, 0.022),
-  3px 10.8px 7.1px rgba(0, 0, 0, 0.043),
-  4.4px 15.8px 12.1px rgba(0, 0, 0, 0.063),
-  5.8px 20.9px 18.9px rgba(0, 0, 0, 0.081),
-  7.5px 27.1px 29.8px rgba(0, 0, 0, 0.096),
-  10.4px 37.5px 52.7px rgba(0, 0, 0, 0.107),
-  27px 97px 154px rgba(0, 0, 0, 0.11)
-;
-        }
-
-        .custom-shape-divider-bottom-1634741793 {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
-        }
-
-        .custom-shape-divider-bottom-1634741793 svg {
-            position: relative;
-            display: block;
-            width: calc(139% + 1.3px);
-            height: 197px;
-        }
-
-        .custom-shape-divider-bottom-1634741793 .shape-fill {
-            fill: #ffffff;
-        }
-
-        /** For mobile devices **/
-        @media (max-width: 767px) {
-            .custom-shape-divider-bottom-1634741793 svg {
-                width: calc(153% + 1.3px);
-                height: 147px;
-            }
+                1.5px 5.6px 3.2px rgba(0, 0, 0, 0.022),
+                3px 10.8px 7.1px rgba(0, 0, 0, 0.043),
+                4.4px 15.8px 12.1px rgba(0, 0, 0, 0.063),
+                5.8px 20.9px 18.9px rgba(0, 0, 0, 0.081),
+                7.5px 27.1px 29.8px rgba(0, 0, 0, 0.096),
+                10.4px 37.5px 52.7px rgba(0, 0, 0, 0.107),
+                27px 97px 154px rgba(0, 0, 0, 0.11);
         }
 
         .scrollable {
@@ -98,23 +68,45 @@
             align-items: center;
             height: 100%;
         }
+
+        .form-select {
+            width: 100%;
+            background: none;
+            color: black;
+            padding: 8px 98px;
+            margin: 5px;
+            font-family: system-ui;
+            font-size: 25px;
+            /* color: #f8e5df; */
+            border: 2px solid #8bc34a;
+            border-radius: 25px;
+            font-weight: bold;
+            background: none;
+            text-align: center;
+            transition:all 0.1s ;
+        }
+        
+        .form-select:hover{
+            border-radius: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body style="
 background: linear-gradient(135deg, #8BC6EC 0%, #9599E2 128%);">
-    <section class="mainSection">
+    <div class="mainSection">
         <div class="container" style="height: inherit;">
             <!-- <img src="https://images3.alphacoders.com/110/1105901.jpg" width="100" height="10" class="img-fluid card-img-top" alt="Waifu Pic SFW"> -->
             <div class="row" style="height: inherit;">
-                <div class="col-md-6 text-center my-3 text-white">
+                <div class="col-md-6 text-center my-5 text-white">
                     <div class="pageCenter">
                         <h1>Looking for your <b>Waifu</b>? Start Finding Pics or Gifs! ❤</h1>
                         <h3>Get Random Waifu Pics</h3>
                         <div id="select">
                         </div>
                         <div class="d-block mx-auto text-center">
-                            <button class="custom-btn" id="generateWaifu">Generate Waifu</button>
+                            <button class="custom-btn" id="generateWaifu">✨ Generate Waifu</button>
                         </div>
                         <span id="loading">
                         </span>
@@ -124,16 +116,16 @@ background: linear-gradient(135deg, #8BC6EC 0%, #9599E2 128%);">
 
                 <div class="col-md-6 text-center">
                     <div class="pageCenter">
-                        <h1 class="my-2">Like This? <a id="downloadLink"
+                        <h1 class="my-2 text-white">Like This? <a id="downloadLink"
                                 href="https://wallpaperaccess.com/full/2258847.jpg" download
-                                class="btn btn-primary">Download</a></h1>
-                        <img class="img-thumbnail d-block my-3" style="max-height: inherit;" src="https://wallpaperaccess.com/full/2258847.jpg" alt=""
-                            id="waifuImg">
+                                class="btn btn-outline-primary rounded-pill">Download</a></h1>
+                        <img class="img-thumbnail d-block my-3" style="max-height: inherit;"
+                            src="https://wallpaperaccess.com/full/2258847.jpg" alt="" id="waifuImg">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </body>
 <script src="script.js"></script>
 

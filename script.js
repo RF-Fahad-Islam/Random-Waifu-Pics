@@ -9,7 +9,6 @@ const categories = [
     "cuddle",
     "cry",
     "kiss",
-    "leak",
     "hug",
     "awoo",
     "pat",
@@ -56,14 +55,14 @@ let selected = document.getElementById("selectInput")
 generateWaifuBtn.addEventListener("click", () => {
     category = selected.value
     api = `https://api.waifu.pics/${type}/${category}`
+    generateWaifuBtn.innerHTML = `<div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+    </div>`
     generateWaifu()
 })
 
 function generateWaifu() {
     fetch(api).then(response => {
-        generateWaifuBtn.innerHTML = `<div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>`
       return response.json()
     }).then(data => {
         waifuImg.src = data.url
