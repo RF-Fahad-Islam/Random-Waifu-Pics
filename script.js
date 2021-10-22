@@ -9,6 +9,7 @@ const categories = [
     "cuddle",
     "cry",
     "kiss",
+    "lick",
     "hug",
     "awoo",
     "pat",
@@ -33,7 +34,6 @@ const categories = [
     "cringe"
 ]
 let api;
-let waifuImg = document.getElementById("waifuImg")
 let imageSection = document.getElementById("imageSection")
 let generateWaifuBtn = document.getElementById("generateWaifu")
 let loading = document.getElementById("loading")
@@ -51,6 +51,15 @@ select.innerHTML = `
 ${options}
 </select>
 `
+const imageSkeleton = `
+<div class="card" style="width: 300px; background: rgba(255,255,255,0.3);">
+    <div class="card-body">
+        <div class="card-title placeholder-glow">
+            <span class="col-12 placeholder" style="height: 430px;"></span>
+        </div>
+    </div>
+</div>
+`
 let selected = document.getElementById("selectInput")
 generateWaifuBtn.addEventListener("click", () => {
     category = selected.value
@@ -58,6 +67,8 @@ generateWaifuBtn.addEventListener("click", () => {
     generateWaifuBtn.innerHTML = `<div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
     </div>`
+    imageSection.innerHTML = ""
+    imageSection.innerHTML = imageSkeleton
     generateWaifu()
 })
 
@@ -65,9 +76,12 @@ function generateWaifu() {
     fetch(api).then(response => {
       return response.json()
     }).then(data => {
-        waifuImg.src = data.url
+        imageSection.innerHTML = `
+        <img class="img-thumbnail d-block my-3"
+        src="${data.url}" alt="Waifu Image" id="waifuImage">
+        `
         downloadLink.href = data.url
-        generateWaifuBtn.innerHTML = "Success! Try Again?"
+        generateWaifuBtn.innerHTML = "✨ Generate More.."
     }).catch(error=> {
         generateWaifuBtn.innerHTML = `Error!`
     })

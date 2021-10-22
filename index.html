@@ -19,11 +19,11 @@
 
         .custom-btn {
             border-radius: 30px;
-            padding: 10px 98px;
+            padding: 10px 30px;
             color: white;
             border: 2px solid #8bc34a;
             background: none;
-            font-size: 24px;
+            font-size: 1.4rem;
             font-weight: bold;
             margin-top: 10px;
             font-family: system-ui;
@@ -36,9 +36,8 @@
             border: none;
         }
 
-        #waifuImg {
-            max-width: 400px;
-            height: auto;
+        #waifuImage {
+            max-height: 450px;
             box-shadow:
                 1.5px 5.6px 3.2px rgba(0, 0, 0, 0.022),
                 3px 10.8px 7.1px rgba(0, 0, 0, 0.043),
@@ -70,23 +69,23 @@
         }
 
         .form-select {
-            width: 100%;
+            width: auto;
             background: none;
             color: black;
-            padding: 8px 98px;
+            padding: 8px 30px;
             margin: 5px;
             font-family: system-ui;
-            font-size: 25px;
+            font-size: 1.6rem;
             /* color: #f8e5df; */
             border: 2px solid #8bc34a;
             border-radius: 25px;
             font-weight: bold;
             background: none;
             text-align: center;
-            transition:all 0.1s ;
+            transition: all 0.1s;
         }
-        
-        .form-select:hover{
+
+        .form-select:hover {
             border-radius: 10px;
             cursor: pointer;
         }
@@ -119,8 +118,11 @@ background: linear-gradient(135deg, #8BC6EC 0%, #9599E2 128%);">
                         <h1 class="my-2 text-white">Like This? <a id="downloadLink"
                                 href="https://wallpaperaccess.com/full/2258847.jpg" download
                                 class="btn btn-outline-primary rounded-pill">Download</a></h1>
-                        <img class="img-thumbnail d-block my-3" style="max-height: inherit;"
-                            src="https://wallpaperaccess.com/full/2258847.jpg" alt="" id="waifuImg">
+                        <div id="imageSection">
+                            <img class="img-thumbnail d-block my-3" style="max-height: inherit;"
+                                src="https://wallpaperaccess.com/full/2258847.jpg" alt="" id="waifuImg">
+                        </div>
+                      
                     </div>
                 </div>
             </div>
